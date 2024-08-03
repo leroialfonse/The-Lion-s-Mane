@@ -25,10 +25,47 @@ const Booking = () => {
             <h2>Book your Appointment</h2>
             {/* We want to control the form ourself. So, we're going to use a custom function and a prevent default, so that the page doesn't refresh onSubmit. We're stripping out the default function. So, we'll use some state here. */}
             <form onSubmit={handleSubmit}>
-                <input id="name">Name: </input>
-                <input id="email">Email: </input>
-                <input id="service">Service: </input>
-                <input id="loctician">Loctician: </input>
+                {/* Apply a label to the form in JSX syntax. */}
+                <label htmlFor="naem">Name</label>
+                <input
+                    type="text"
+                    id="name" value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                />
+
+                <label htmlFor="email">Email</label>
+                <input
+                    type="text"
+                    id="email" value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+
+                {/* calendar placeholder. */}
+
+                <label htmlFor="services">Services</label>
+                <select
+                    id="service" value={service}
+                    onChange={(e) => setService(e.target.value)}
+                    required>
+                    <option value="" disabled>Select a service</option>
+                    {services.map((service, index) => (
+                        <option key={index} value={service}>{service}</option>
+                    ))}
+                </select>
+                <label htmlFor="loctician">Loctician</label>
+                <select
+                    id="loctician" value={loctician}
+                    onChange={(e) => setLoctician(e.target.value)}
+                >
+                    <option value="" disabled>Select a loctician (optional)</option>
+                    {locticians.map((loctician, index) => (
+                        <option key={index} value={loctician}>{loctician}</option>
+                    ))}
+                </select>
+
+
                 <button type="submit">Book</button>
             </form>
         </div>
