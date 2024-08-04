@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div>
       <header>
-        <h1>The Lion's Mane</h1>
+        <h1>The Lion` s Mane</h1>
         <nav>
           <a href="/">Home</a> | <a href="/staff">Staff</a> | <a href="/services">Services</a> | <a href="/booking">Booking</a> | <a href="/admin">Admin</a>
         </nav>

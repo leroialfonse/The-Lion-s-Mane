@@ -34,8 +34,8 @@ const Booking = () => {
     // Prevent default form behavior (including reloading the page), and instead, follow these instructions.
     const handleSubmit = async (e) => {
         e.preventDefault()
-        // Go fetch something. In this case, the return route for our booking.
-        const response = await fetch('http://localhost:5000/api/bookings', {
+        // Go fetch something. In this case, the return route for our booking. Don't forget some error handling try/catch...
+        const response = await fetch('http://localhost:3001/api/booking', {
             // Setting the method, and then telling what headers to use. 
             method: 'POST',
             headers: {
