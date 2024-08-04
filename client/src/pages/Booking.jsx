@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // Access to react calendar component. Easier than building my own.
 import Calendar from 'react-calendar'
 // Will allow for redirects to the homepage after a user completes making a booking.
@@ -23,11 +23,11 @@ const locticians = [
 const Booking = () => {
 
 
-    const [name, setName] = React.useState('')
-    const [email, setEmail] = React.useState('')
-    const [date, setDate] = React.useState(new Date())
-    const [service, setService] = React.useState('')
-    const [loctician, setLoctician] = React.useState('')
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [date, setDate] = useState(new Date())
+    const [service, setService] = useState('')
+    const [loctician, setLoctician] = useState('')
 
     const navigate = useNavigate()
 
@@ -61,7 +61,7 @@ const Booking = () => {
             <form onSubmit={handleSubmit}>
                 <div>
                     {/* Apply a label to the form in JSX syntax. */}
-                    <label htmlFor="naem">Name</label>
+                    <label htmlFor="name">Name: </label>
                     <input
                         type="text"
                         id="name" value={name}
@@ -70,7 +70,7 @@ const Booking = () => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">Email: </label>
                     <input
                         type="text"
                         id="email" value={email}
@@ -89,7 +89,7 @@ const Booking = () => {
                     <p>Selected Date: {date.toLocaleDateString()}</p>
                 </div>
                 <div>
-                    <label htmlFor="services">Services</label>
+                    <label htmlFor="service">Service: </label>
                     <select
                         id="service" value={service}
                         onChange={(e) => setService(e.target.value)}
@@ -101,7 +101,7 @@ const Booking = () => {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="loctician">Loctician</label>
+                    <label htmlFor="loctician">Loctician: </label>
                     <select
                         id="loctician" value={loctician}
                         onChange={(e) => setLoctician(e.target.value)}
