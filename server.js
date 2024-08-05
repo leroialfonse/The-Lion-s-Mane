@@ -8,7 +8,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-PORT = process.env.PORT
+// PORT = process.env.PORT || 3001
 
 mongoose.connect(process.env.DB_CONNECTION_STRING)
     .then(() => {
@@ -54,6 +54,6 @@ app.post('/api/booking', async (req, res) => {
 
 })
 
-app.listen(PORT, () => {
-    console.log(`Server is connected on port : ${PORT}.`)
+app.listen(3001, () => {
+    console.log(`Server is connected.`)
 })
